@@ -1,35 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Використання умовного оператора IF та умовної операції</title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>	
-    <body>
-        <script>
-            "use strict";
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Оператори умовного переходу — хто старший</title>
+</head>
+<body>
+<script>
+"use strict";
 
-            document.write("<p style='text-align:center'>Приклад знаходження більшого числа</p>");
+document.write("<h3 style='text-align:center;'>Визначення, хто найстарший серед трьох друзів</h3>");
 
-            let x = 12; 
-            let y = 25; 
-            let z = 7;
-            document.write("Задані числа: ", x, ", ", y, ", ", z, ", ");
+let age1 = 19, age2 = 22, age3 = 30;
+let name1 = "Олег", name2 = "Нікіта", name3 = "Іван";
 
-            if (x === y && y === z) {
-                document.write("Всі три числа однакові: x = y = z = ", x);
-            } else if (x > y && x > z) {
-                document.write("Найбільше з яких число - x = ", x);
-            } else if (y > z) {
-                document.write("Найбільше з яких число - y = ", y);
-            } else {
-                document.write("Найбільше з яких число - z = ", z);
-            }
+document.write("<p>" + name1 + " — " + age1 + " років<br>");
+document.write(name2 + " — " + age2 + " років<br>");
+document.write(name3 + " — " + age3 + " років</p>");
 
-            let max = x > y ? x : y; 
-            max = max > z ? max : z;
-            document.write("<p>Значення найбільшого серед трьох чисел - ", max, "</p>");
-        </script>
-    </body>
+if (age1 > age2 && age1 > age3 && age2 > age3) {
+	document.write("<p>Найстарший — " + name1 + " (" + age1 + " років)</p>");
+    document.write("<p>Наймолодший — " + name3 + " (" + age3 + " років)</p>");
+}
+else if (age1 > age2 && age1 > age3 && age3 > age2) {
+	document.write("<p>Найстарший — " + name1 + " (" + age1 + " років)</p>");
+    document.write("<p>Наймолодший — " + name2 + " (" + age2 + " років)</p>");
+}
+else if (age2 > age3 && age2 > age1 && age3 > age1) {
+	document.write("<p>Найстарший — " + name2 + " (" + age2 + " років)</p>");
+    document.write("<p>Наймолодший — " + name1 + " (" + age1 + " років)</p>");
+}
+else if (age2 > age1 && age2 > age3 && age1 > age3) {
+	document.write("<p>Найстарший — " + name2 + " (" + age2 + " років)</p>");
+    document.write("<p>Наймолодший — " + name3 + " (" + age3 + " років)</p>");
+}
+else if (age3 > age1 && age3 > age2 && age2 > age1) {
+	document.write("<p>Найстарший — " + name2 + " (" + age2 + " років)</p>");
+    document.write("<p>Наймолодший — " + name1 + " (" + age1 + " років)</p>");
+}
+else {
+	document.write("<p>Найстарший — " + name3 + " (" + age3 + " років)</p>");
+    document.write("<p>Наймолодший — " + name2 + " (" + age2 + " років)</p>");
+}
+
+let maxAge = (age1 > age2) ? age1 : age2;
+maxAge = (maxAge > age3) ? maxAge : age3;
+
+let minAge = (age1 < age2) ? age1 : age2;
+minAge = (minAge < age3) ? minAge : age3;
+
+document.write("<p>Найбільший вік (через тернарний оператор): " + maxAge + "</p>");
+document.write("<p>Найменший вік (через тернарний оператор): " + minAge + "</p>");
+</script>
+</body>
 </html>
