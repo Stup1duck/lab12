@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Використання умовного оператора IF</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+			
+			let sport = prompt("Введіть ваш улюблений вид спорту (футбол, баскетбол, теніс, плавання):");
+
+			if (sport === "футбол") {
+				document.write("Футбол - це король спорту! Ви любите командні ігри.");
+			} else if (sport === "баскетбол") {
+				document.write("Баскетбол - це динамічна гра! Ви любите швидкі рішення.");
+			} else if (sport === "теніс") {
+				document.write("Теніс - це гра на точність! Ви цінуєте індивідуальність.");
+			} else if (sport === "плавання") {
+				document.write("Плавання - це відмінний спосіб тренування! Ви любите спокій води.");
+			} else {
+				document.write("На жаль, цей вид спорту не визнано. Спробуйте ще раз!");
+			}
+		</script>
+	</body>
+</html>

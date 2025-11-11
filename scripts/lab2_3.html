@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Використання оператора SWITCH</title>
+	</head>	
+	<body>
+        <script>
+            "use strict";
+    
+            let vehicleNumber = parseInt(prompt("Введіть номер транспортного засобу:\n1 - Автомобіль\n2 - Велосипед\n3 - Поїзд\n4 - Літак\n5 - Корабель"));
+            let vehicleName;
+            let speed;
+    
+            switch (vehicleNumber) {
+                case 1:
+                    vehicleName = "Автомобіль";
+                    speed = "120 км/год";
+                    break;
+                case 2:
+                    vehicleName = "Велосипед";                  
+                    speed = "25 км/год";
+                    break;
+                case 3:
+                    vehicleName = "Поїзд";
+                    speed = "200 км/год";
+                    break;
+                case 4:
+                    vehicleName = "Літак";
+                    speed = "900 км/год";
+                    break;
+                case 5:
+                    vehicleName = "Корабель";
+                    speed = "40 км/год";
+                    break;
+                default:
+                    vehicleName = "Невідомий транспорт";
+                    speed = "Не відома швидкість";
+            }
+    
+            document.write("Ви обрали транспортний засіб: ");
+            document.write(vehicleName, " - ");
+            document.write(speed);
+        </script>
+    </body>
+</html>

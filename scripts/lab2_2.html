@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Використання умовного оператора IF та умовної операції</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>	
+    <body>
+        <script>
+            "use strict";
+
+            document.write("<p style='text-align:center'>Приклад знаходження більшого числа</p>");
+
+            let x = 12; 
+            let y = 25; 
+            let z = 7;
+            document.write("Задані числа: ", x, ", ", y, ", ", z, ", ");
+
+            if (x === y && y === z) {
+                document.write("Всі три числа однакові: x = y = z = ", x);
+            } else if (x > y && x > z) {
+                document.write("Найбільше з яких число - x = ", x);
+            } else if (y > z) {
+                document.write("Найбільше з яких число - y = ", y);
+            } else {
+                document.write("Найбільше з яких число - z = ", z);
+            }
+
+            let max = x > y ? x : y; 
+            max = max > z ? max : z;
+            document.write("<p>Значення найбільшого серед трьох чисел - ", max, "</p>");
+        </script>
+    </body>
+</html>

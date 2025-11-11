@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Використання операторів циклів</title>
+    </head>	
+    <body>
+        <script> 
+            "use strict";
+
+            let n = parseInt(prompt("Введіть ціле число для обчислення факторіалу:"));
+            
+            document.write("<p>Використання оператора циклу <b>FOR</b></p>");
+            let factorialFor = 1;
+            for (let i = 1; i <= n; i++) {
+                factorialFor *= i; 
+            }
+            document.write("Факторіал числа ", n, " дорівнює ", factorialFor);
+
+            document.write("<p>Використання оператора циклу <b>WHILE</b></p>");
+            let factorialWhile = 1;
+            let j = 1;
+            while (j <= n) {
+                factorialWhile *= j; 
+                j++;
+            }
+            document.write("Факторіал числа ", n, " дорівнює ", factorialWhile);
+
+            document.write("<p>Використання оператора циклу <b>DO WHILE</b></p>");
+            let factorialDoWhile = 1;
+            let k = 1;
+            do {
+                factorialDoWhile *= k; 
+                k++;
+            } 
+            while (k <= n);
+            document.write("Факторіал числа ", n, " дорівнює ", factorialDoWhile);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Гра: Вгадай слово</title>
+    </head>	
+    <body>
+        <h1>Гра: Вгадай слово</h1>
+        <script>
+            "use strict";
+    
+            const words = ["javascript", "html", "css", "python", "java", "ruby", "swift", "kotlin"];
+            const secretWord = words[Math.floor(Math.random() * words.length)]; 
+            let attemptsAllowed = 5; 
+            let attempts = 0; 
+            let guess = ""; 
+    
+            let answer = confirm("Зіграємо?");
+    
+            if (answer) {
+                while (attempts < attemptsAllowed) {
+                    guess = prompt("Введіть слово англійською (доступно " + (attemptsAllowed - attempts) + " спроб):");
+    
+                    attempts++;
+    
+                    if (guess === secretWord) {
+                        alert("Вітаємо! Ви вгадали слово: " + secretWord);
+                        break; 
+                    } else {
+                        let correctLetters = 0;
+    
+                        for (let i = 0; i < Math.min(guess.length, secretWord.length); i++) {
+                            if (guess[i] === secretWord[i]) {
+                                correctLetters++;
+                            }
+                        }
+    
+                        alert("Неправильно. Ви вгадали " + correctLetters + " букв(и) правильно.");
+                    }
+    
+                    if (attempts === attemptsAllowed) {
+                        alert("Вибачте, ви вичерпали всі спроби!\nЗагадане слово було: " + secretWord);
+                    }
+                }
+            } else {
+                alert("Шкода.\nНе пощастило в грі, то пощастить в коханні, але можливо хочеш ще?");
+            }
+        </script>
+    </body>
+</html>
